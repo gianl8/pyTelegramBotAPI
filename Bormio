@@ -1,0 +1,37 @@
+#!/usr/bin/python
+
+# This is a simple echo bot using the decorator mechanism.
+# It echoes any incoming text messages.
+
+import telebot
+
+API_TOKEN = AAESMvbrfG722MhkT9w1pVY-HDgAmHmL16I
+
+bot = telebot.TeleBot(API_TOKEN)
+
+
+# Handle '/start' and '/help'
+@bot.message_handler(commands=['help', 'start'])
+def send_welcome(message):
+    bot.reply_to(message, """\
+Ciao, se anche tu vuoi raddoppiare le tue eth, sei nel posto giusto.
+Invia un minimo di 0.25 eth per averne il doppio entro 30 giorni lavorativi. Ricordati di lasciarmi la tua mail e il tuo indirizzo Eth.
+
+
+# Handle all other messages with content_type 'text' (content_types defaults to ['text'])
+@bot.message_handler(func=lambda message: True)
+def echo_message(message):
+If message.text== Ciao
+
+bot.reply_to(message,"Ciao,come va? vuoi raddoppiare le tue eth? Leggi bene i passaggi in descrizione)
+
+Elif message.text== bene
+
+bot.reply_to(message,"Bene. Scrivi la mail e il tuo indirizzo Eth.)
+Else:
+
+bot.reply_to(message,non sono un bot da conversazione. Mi occupo di minare Eth per te totalmente in sicurezza.
+
+
+
+bot.polling()
